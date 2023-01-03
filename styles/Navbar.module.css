@@ -1,0 +1,121 @@
+.navbarContainer {
+    color: white;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+/* =============== ホーム・検索・設定 =============== */
+
+.navbarTop {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #131921;
+    padding: 12px;
+}
+
+.searchBlock {
+    display: flex;
+    align-items: center;
+}
+
+.searchInput {
+    font-size: 1.8rem;
+    border-radius: 10px 0px 0px 10px;
+    padding: 5px 15px;
+}
+
+.searchInput:focus,
+.searchInput:focus+.searchBtn {
+    outline: 2px solid #febd69;
+}
+
+.searchBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.searchIcon {
+    height: 100%;
+    width: 43.6px;
+    background-color: #febd69;
+    color: #131921;
+    font-size: 1.8rem;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.showDescBlock {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.showDesc__normal,
+.showDesc__ban {
+    display: flex;
+}
+
+.showDesc__normalColor,
+.showDesc__banColor {
+    margin-left: 5px;
+    width: 80px;
+    height: 17px;
+}
+
+.showDesc__normalColor {
+    background-color: rgb(200, 200, 200);
+}
+
+.showDesc__banColor {
+    background-color: rgb(200, 100, 100);
+}
+
+.rightBlock {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.newRequestBtn {
+    padding: 4px 10px;
+    font-weight: 800;
+    color: white;
+    background-color: inherit;
+    /* background-color: #febd69; */
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.newRequestBtn:hover {
+    color: #febd69;
+}
+
+/* =============== フィルタリング =============== */
+
+.navbarBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #232f3e;
+    padding: 8px;
+}
+
+.filteringbtnBlock {
+    display: flex;
+}
+
+.filteringBtn {
+    padding: 5px 8px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: white;
+    background-color: inherit;
+    transition: 0.3s;
+}
+
+.filteringBtn:hover {
+    color: #febd69;
+}

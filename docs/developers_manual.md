@@ -17,4 +17,6 @@ yarn dev
 # ライブラリインストール
 yarn add framer-motion
 yarn add @emotion/react
+
+yarn add @mui/icons-material @mui/material @emotion/styled @emotion/react
 ```
