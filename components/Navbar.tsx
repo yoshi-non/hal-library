@@ -1,11 +1,19 @@
 import React from 'react'
-import styles from "../styles/Navbar.module.css"
 import BottomNav from './Navbar/BottomNav'
 import TopNav from './Navbar/TopNav'
+import { css } from "@emotion/react"
+
+const styles = {
+  navbarContainer: css`
+    color: white;
+    font-weight: 900;
+    margin-bottom: 10px;
+  `,
+}
 
 const Navbar = () => {
   return (
-    <div className={styles.navbarContainer}>
+    <div css={styles.navbarContainer}>
       {/* ホーム・検索・設定 */}
       <TopNav/>
 

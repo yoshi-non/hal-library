@@ -1,13 +1,42 @@
 import React from 'react'
-import styles from "../../../styles/Navbar.module.css"
+import { css } from '@emotion/react'
 
+const styles = {
+  showDescBlock: css`
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  `,
+
+  showDesc__normal: css`
+    display: flex;
+  `,
+
+  showDesc__ban: css`
+    display: flex;
+  `,
+
+  showDesc__normalColor: css`
+    margin-left: 5px;
+    width: 80px;
+    height: 17px;
+    background-color: rgb(200, 200, 200);
+  `,
+
+  showDesc__banColor: css`
+    margin-left: 5px;
+    width: 80px;
+    height: 17px;
+    background-color: rgb(200, 100, 100);
+  `,
+}
 
 const ShowDescription = () => {
   return (
-    <div className={styles.showDescBlock}>
-      <div className={styles.showDesc}>
-        <div className={styles.showDesc__normal}>通常 : <p className={styles.showDesc__normalColor}></p></div>
-        <div className={styles.showDesc__ban}>禁帯出 :<p className={styles.showDesc__banColor}></p></div>
+    <div css={styles.showDescBlock}>
+      <div>
+        <div css={styles.showDesc__normal}>通常 : <p css={styles.showDesc__normalColor}></p></div>
+        <div css={styles.showDesc__ban}>禁帯出 :<p css={styles.showDesc__banColor}></p></div>
       </div>
       <p>※NK管理部は図書館にはありません</p>
     </div>
