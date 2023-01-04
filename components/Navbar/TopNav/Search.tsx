@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search'
 import { css } from '@emotion/react'
+import { dummyData } from '../../../dummyData'
+import { SetBookDataProps } from '../../../types/SetBookDataProps'
+import { BookData } from '../../../types/BookData'
 
 const styles = {
   searchBlock: css`
@@ -37,8 +40,23 @@ const styles = {
   `,
 }
 
-const Search = () => {
+const Search = ({setBookData}: SetBookDataProps) => {
   const [searchText, setSearchText] = useState("");
+  const bookData = dummyData
+
+  const searchHandler = () => {
+    const newBookData: BookData = bookData.filter(
+      (data) => data.title.toUpperCase().includes(searchText)|| data.title.toLowerCase().includes(searchText) 
+      &&data)
+    
+    setBookData(newBookData)
+  }
+
+  const handleKeyDown = (e: string) => {
+    if (e === "Enter") {
+      searchHandler()
+    }
+  }
 
   return (
     <div css={styles.searchBlock}>
@@ -47,8 +65,14 @@ const Search = () => {
         value={searchText}
         onChange={(event) => setSearchText(event.target.value)}
         placeholder="検索"
+        onKeyDown={(event) => handleKeyDown(event.key)}
       />
-      <button css={styles.searchBtn} className="searchBtn">
+      <button
+        type='submit'
+        css={styles.searchBtn}
+        className="searchBtn"
+        onClick={() => searchHandler()}
+      >
         <SearchIcon css={styles.searchIcon}/>
       </button>
     </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { css } from '@emotion/react'
 
 const styles = {
@@ -32,9 +32,13 @@ type Props = {
 }
 
 const RightFilBtn = ({children}: Props) => {
+  const [isShow, setIsShow] = useState<boolean>(true)
   return (
-    <button css={styles.filRightBtn__show}>
-      {children}
+    <button
+      onClick={() => setIsShow(!isShow)}
+      css={isShow ? styles.filRightBtn__show : styles.filRightBtn__hidden}
+    >
+      {children}{!isShow ? <p>表示する</p> : <p>非表示にする</p>}
     </button>
   )
 }

@@ -31,8 +31,8 @@ const FilterBtnBlock = () => {
         <LeftFilBtn>ISEN</LeftFilBtn>
       </div>
       <div css={styles.filBtnRightBlock}>
-        <RightFilBtn>NK管理部を<br/>非表示にする</RightFilBtn>
-        <RightFilBtn>禁帯出を<br/>表示する</RightFilBtn>
+        <RightFilBtn>NK管理部を</RightFilBtn>
+        <RightFilBtn>禁帯出を</RightFilBtn>
       </div>
     </div>
   )

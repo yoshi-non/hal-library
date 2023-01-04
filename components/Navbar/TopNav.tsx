@@ -5,6 +5,7 @@ import Logo from './TopNav/Logo'
 import ShowDescription from './TopNav/ShowDescription'
 import NewRequestBtn from './TopNav/NewRequestBtn'
 import { css } from "@emotion/react";
+import { SetBookDataProps } from '../../types/SetBookDataProps'
 
 const styles = {
   navbarTop: css`
@@ -22,11 +23,11 @@ const styles = {
   `,
 }
 
-const TopNav = () => {
+const TopNav = ({setBookData}: SetBookDataProps) => {
   return (
     <div css={styles.navbarTop}>
       <Logo/>
-      <Search/>
+      <Search setBookData={setBookData}/>
 
       <div css={styles.rightBlock}>
         <ShowDescription/>

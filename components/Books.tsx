@@ -2,12 +2,16 @@
 import React from 'react'
 import { dummyData } from "../dummyData";
 import styles from '../styles/Books.module.css'
+import { BookData } from '../types/BookData';
 
-const Books = () => {
-  const bookData = dummyData
+type Props = {
+  bookData: BookData
+}
+
+const Books = ({bookData}: Props) => {
   return (
     <div className={styles.booksContainer}>
-      {bookData.map((book, index) => 
+      {bookData.map((book, index: number) => 
         <div key={index} className={styles.bookCard}>
           <img src={book.img_url} alt={book.title} className={`${book.division === "通常" ? styles.bookCard__img : styles.bookCard__banImg}`}/>
           <div className={styles.bookCard__section}>
