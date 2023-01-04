@@ -1,4 +1,3 @@
-import React from 'react'
 import FilterBtnBlock from './BottomNav/FilterBtnBlock'
 import { css } from '@emotion/react'
 import { SetBookData } from '../../types/SetBookData'

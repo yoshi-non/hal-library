@@ -3,7 +3,6 @@ import RightFilBtn from './FilterBtnBlock/RightFilBtn'
 import { css } from '@emotion/react'
 import { SetBookData } from '../../../types/SetBookData'
 import { useState } from 'react'
-import { SetFilterContents } from '../../../types/SetFilterContents'
 
 const styles = {
     filBtnBlock: css`
