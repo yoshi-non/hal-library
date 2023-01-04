@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import { css } from '@emotion/react'
 import { SetBookData } from '../../../../types/SetBookData'
+import { SetFilterContents } from '../../../../types/SetFilterContents'
+import { BookData } from '../../../../types/BookData'
+import { dummyData } from '../../../../dummyData'
 
 const styles = {
   filRightBtn__show: css`
@@ -30,16 +33,45 @@ const styles = {
 
 type Props = {
   contents: string
-} & SetBookData
+  filterContentsTheme: string
+} & SetBookData & SetFilterContents
 
-const RightFilBtn = ({contents, setBookData}: Props) => {
+const RightFilBtn = ({contents, filterContentsTheme, setBookData, setFilterContents}: Props) => {
+  const bookData = dummyData
   const [isShow, setIsShow] = useState<boolean>(true)
+  const contentsHandler = () => {
+    if (contents === "禁帯出"){
+      if (isShow){
+        // 非表示処理
+        setFilterContents(contents)
+        if (filterContentsTheme === "すべて") {
+          const newBookData: BookData = bookData.filter((data) => (!data.division.includes(contents))&&data)
+          setBookData(newBookData)
+        } else {
+          const newBookData: BookData = bookData.filter((data) => (data.place.includes(filterContentsTheme))&&(!data.division.includes(contents))&&data)
+          setBookData(newBookData)
+        }
+      }
+      if (!isShow) {
+        // 表示処理
+        setFilterContents("")
+        if (filterContentsTheme === "すべて") {
+          setBookData(bookData)
+        } else {
+          const newBookData: BookData = bookData.filter((data) => (data.place.includes(filterContentsTheme))&&data)
+          setBookData(newBookData)
+        }
+      }
+      setIsShow(!isShow)
+    }
+  }
+  
   return (
     <button
-      onClick={() => setIsShow(!isShow)}
+      onClick={() => contentsHandler()}
       css={isShow ? styles.filRightBtn__show : styles.filRightBtn__hidden}
     >
-      {contents}{!isShow ? <p>表示する</p> : <p>非表示にする</p>}
+      {contents}を{!isShow ? <p>表示する</p> : <p>非表示にする</p>}
     </button>
   )
 }

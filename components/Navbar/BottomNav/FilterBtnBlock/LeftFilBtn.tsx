@@ -1,5 +1,8 @@
 import { css } from '@emotion/react'
+import { dummyData } from '../../../../dummyData'
+import { BookData } from '../../../../types/BookData'
 import { SetBookData } from '../../../../types/SetBookData'
+import { SetFilterContentsTheme } from '../../../../types/SetFilterContentsTheme'
 
 const styles = {
   filLeftBtn: css`
@@ -14,11 +17,31 @@ const styles = {
 
 type Props = {
   contents: string
-} & SetBookData
+  filterContents: string
+} & SetBookData & SetFilterContentsTheme
 
-const LeftFilBtn = ({contents, setBookData}: Props) => {
+const LeftFilBtn = ({contents, filterContents, setBookData, setFilterContentsTheme}: Props) => {
+  const bookData = dummyData
+  const contentsHandler = () => {
+    setFilterContentsTheme(contents)
+    if (contents === "すべて") {
+      setBookData(bookData)
+    } else {
+      if (filterContents === "") {
+        const newBookData: BookData = bookData.filter((data) => (data.place.includes(contents))&&data)
+        setBookData(newBookData)
+      }else {
+        const newBookData: BookData = bookData.filter((data) => (data.place.includes(contents))&&(!data.division.includes(filterContents))&&data)
+        setBookData(newBookData)
+      }
+    }
+  }
+
   return (
-    <button css={styles.filLeftBtn}>
+    <button
+      css={styles.filLeftBtn}
+      onClick={() => contentsHandler()}
+    >
       {contents}
     </button>
   )
