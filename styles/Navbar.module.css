@@ -6,6 +6,7 @@
 
 /* =============== ホーム・検索・設定 =============== */
 
+/* NavbarTop */
 .navbarTop {
     display: flex;
     gap: 20px;
@@ -95,6 +96,8 @@
 
 /* =============== フィルタリング =============== */
 
+/* NavbarBottom */
+
 .navbarBottom {
     display: flex;
     align-items: center;
@@ -103,11 +106,16 @@
     padding: 8px;
 }
 
-.filteringBtnBlock {
+.filBtnBlock {
     display: flex;
 }
 
-.filteringBtn {
+.filBtnLeftBlock {
+    display: flex;
+    gap: 10px;
+}
+
+.filLeftBtn {
     padding: 5px 8px;
     font-size: 1.1rem;
     font-weight: 800;
@@ -116,6 +124,36 @@
     transition: 0.3s;
 }
 
-.filteringBtn:hover {
+.filBtnRightBlock {
+    margin-left: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+.filRightBtn__show {
+    min-width: 110px;
+    padding: 5px 8px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #131921;
+    background-color: #febd69;
+    border: 2px solid #febd69;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.filRightBtn__hidden {
+    min-width: 110px;
+    padding: 5px 8px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: white;
+    background-color: inherit;
+    border: 2px solid white;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.filBtn:hover {
     color: #febd69;
 }
