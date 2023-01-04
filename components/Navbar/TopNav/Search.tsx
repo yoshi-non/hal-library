@@ -2,7 +2,7 @@ import { useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search'
 import { css } from '@emotion/react'
 import { dummyData } from '../../../dummyData'
-import { SetBookDataProps } from '../../../types/SetBookDataProps'
+import { SetBookData } from '../../../types/SetBookData'
 import { BookData } from '../../../types/BookData'
 
 const styles = {
@@ -40,7 +40,7 @@ const styles = {
   `,
 }
 
-const Search = ({setBookData}: SetBookDataProps) => {
+const Search = ({setBookData}: SetBookData) => {
   const [searchText, setSearchText] = useState("");
   const bookData = dummyData
 

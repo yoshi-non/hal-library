@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { css } from '@emotion/react'
+import { SetBookData } from '../../../../types/SetBookData'
 
 const styles = {
   filRightBtn__show: css`
@@ -28,17 +29,17 @@ const styles = {
 }
 
 type Props = {
-    children: React.ReactNode
-}
+  contents: string
+} & SetBookData
 
-const RightFilBtn = ({children}: Props) => {
+const RightFilBtn = ({contents, setBookData}: Props) => {
   const [isShow, setIsShow] = useState<boolean>(true)
   return (
     <button
       onClick={() => setIsShow(!isShow)}
       css={isShow ? styles.filRightBtn__show : styles.filRightBtn__hidden}
     >
-      {children}{!isShow ? <p>表示する</p> : <p>非表示にする</p>}
+      {contents}{!isShow ? <p>表示する</p> : <p>非表示にする</p>}
     </button>
   )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import FilterBtnBlock from './BottomNav/FilterBtnBlock'
 import { css } from '@emotion/react'
+import { SetBookData } from '../../types/SetBookData'
 
 const styles = {
   navbarBottom: css`
@@ -12,10 +13,10 @@ const styles = {
   `,
 }
 
-const BottomNav = () => {
+const BottomNav = ({setBookData}: SetBookData) => {
   return (
     <div css={styles.navbarBottom}>
-      <FilterBtnBlock/>
+      <FilterBtnBlock setBookData={setBookData}/>
       <p>データ更新日:2023/01/04</p>
     </div>
   )

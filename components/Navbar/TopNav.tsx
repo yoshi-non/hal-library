@@ -1,11 +1,10 @@
-import React from 'react'
 import SettingsIcon from '@mui/icons-material/Settings'
 import Search from './TopNav/Search'
 import Logo from './TopNav/Logo'
 import ShowDescription from './TopNav/ShowDescription'
 import NewRequestBtn from './TopNav/NewRequestBtn'
 import { css } from "@emotion/react";
-import { SetBookDataProps } from '../../types/SetBookDataProps'
+import { SetBookData } from '../../types/SetBookData'
 
 const styles = {
   navbarTop: css`
@@ -23,7 +22,7 @@ const styles = {
   `,
 }
 
-const TopNav = ({setBookData}: SetBookDataProps) => {
+const TopNav = ({setBookData}: SetBookData) => {
   return (
     <div css={styles.navbarTop}>
       <Logo/>

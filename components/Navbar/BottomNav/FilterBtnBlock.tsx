@@ -1,7 +1,7 @@
-import React from 'react'
 import LeftFilBtn from './FilterBtnBlock/LeftFilBtn'
 import RightFilBtn from './FilterBtnBlock/RightFilBtn'
 import { css } from '@emotion/react'
+import { SetBookData } from '../../../types/SetBookData'
 
 const styles = {
     filBtnBlock: css`
@@ -20,19 +20,40 @@ const styles = {
   `,
 }
 
-const FilterBtnBlock = () => {
+const FilterBtnBlock = ({setBookData}: SetBookData) => {
   return (
     <div css={styles.filBtnBlock}>
       <div css={styles.filBtnLeftBlock}>
-        <LeftFilBtn>すべて</LeftFilBtn>
-        <LeftFilBtn>新着本</LeftFilBtn>
-        <LeftFilBtn>HAL</LeftFilBtn>
-        <LeftFilBtn>MODE</LeftFilBtn>
-        <LeftFilBtn>ISEN</LeftFilBtn>
+        <LeftFilBtn
+          contents="すべて"
+          setBookData={setBookData}
+        />
+        <LeftFilBtn
+          contents="新着本"
+          setBookData={setBookData}
+        />
+        <LeftFilBtn
+          contents="HAL"
+          setBookData={setBookData}
+        />
+        <LeftFilBtn
+          contents="MODE"
+          setBookData={setBookData}
+        />
+        <LeftFilBtn
+          contents="ISEN"
+          setBookData={setBookData}
+        />
       </div>
       <div css={styles.filBtnRightBlock}>
-        <RightFilBtn>NK管理部を</RightFilBtn>
-        <RightFilBtn>禁帯出を</RightFilBtn>
+        <RightFilBtn 
+          contents="NK管理部を"
+          setBookData={setBookData}
+        />
+        <RightFilBtn
+          contents="禁帯出を"
+          setBookData={setBookData}
+        />
       </div>
     </div>
   )

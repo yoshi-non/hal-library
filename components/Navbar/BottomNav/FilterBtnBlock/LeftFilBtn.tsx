@@ -1,5 +1,5 @@
-import React from 'react'
 import { css } from '@emotion/react'
+import { SetBookData } from '../../../../types/SetBookData'
 
 const styles = {
   filLeftBtn: css`
@@ -13,13 +13,13 @@ const styles = {
 }
 
 type Props = {
-    children: React.ReactNode
-}
+  contents: string
+} & SetBookData
 
-const LeftFilBtn = ({children}: Props) => {
+const LeftFilBtn = ({contents, setBookData}: Props) => {
   return (
     <button css={styles.filLeftBtn}>
-      {children}
+      {contents}
     </button>
   )
 }

@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react"
 import { BookData } from "./BookData"
 
-export type SetBookDataProps = {
+export type SetBookData = {
     setBookData: Dispatch<SetStateAction<BookData>>
 }
   

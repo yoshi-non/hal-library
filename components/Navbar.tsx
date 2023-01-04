@@ -1,7 +1,7 @@
 import BottomNav from './Navbar/BottomNav'
 import TopNav from './Navbar/TopNav'
 import { css } from "@emotion/react"
-import { SetBookDataProps } from '../types/SetBookDataProps'
+import { SetBookData } from '../types/SetBookData'
 
 const styles = {
   navbarContainer: css`
@@ -12,14 +12,14 @@ const styles = {
 }
 
 
-const Navbar = ({setBookData}: SetBookDataProps) => {
+const Navbar = ({setBookData}: SetBookData) => {
   return (
     <div css={styles.navbarContainer}>
       {/* ホーム・検索・設定 */}
       <TopNav setBookData={setBookData}/>
 
       {/* フィルタリング */}
-      <BottomNav/>
+      <BottomNav setBookData={setBookData}/>
     </div>
   )
 }
