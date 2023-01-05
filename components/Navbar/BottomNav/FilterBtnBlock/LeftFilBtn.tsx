@@ -5,6 +5,15 @@ import { SetBookData } from '../../../../types/SetBookData'
 import { SetFilterContentsTheme } from '../../../../types/SetFilterContentsTheme'
 
 const styles = {
+  filLeftBtn__select: css`
+    padding: 5px 8px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #febd69;
+    background-color: inherit;
+    transition: 0.3s;
+  `,
+  
   filLeftBtn: css`
     padding: 5px 8px;
     font-size: 1.1rem;
@@ -18,9 +27,10 @@ const styles = {
 type Props = {
   contents: string
   filterContents: string
+  filterContentsTheme: string
 } & SetBookData & SetFilterContentsTheme
 
-const LeftFilBtn = ({contents, filterContents, setBookData, setFilterContentsTheme}: Props) => {
+const LeftFilBtn = ({contents, filterContents, filterContentsTheme, setBookData, setFilterContentsTheme}: Props) => {
   const bookData = dummyData
   const contentsHandler = () => {
     setFilterContentsTheme(contents)
@@ -39,7 +49,7 @@ const LeftFilBtn = ({contents, filterContents, setBookData, setFilterContentsThe
 
   return (
     <button
-      css={styles.filLeftBtn}
+      css={contents === filterContentsTheme ? styles.filLeftBtn__select : styles.filLeftBtn}
       onClick={() => contentsHandler()}
     >
       {contents}

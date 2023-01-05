@@ -7,6 +7,7 @@ const styles = {
     font-weight: 800;
     color: white;
     background-color: inherit;
+    border: 2px solid white;
     border-radius: 10px;
     transition: 0.3s;
   `,

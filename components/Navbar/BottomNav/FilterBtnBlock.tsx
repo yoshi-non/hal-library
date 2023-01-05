@@ -34,6 +34,7 @@ const FilterBtnBlock = ({setBookData}: SetBookData) => {
             key={index}
             contents={contentsTheme}
             setBookData={setBookData}
+            filterContentsTheme={filterContentsTheme}
             setFilterContentsTheme={setFilterContentsTheme}
             filterContents={filterContents}
           />
@@ -43,8 +44,8 @@ const FilterBtnBlock = ({setBookData}: SetBookData) => {
         <RightFilBtn
           contents="禁帯出"
           setBookData={setBookData}
-          setFilterContents={setFilterContents}
           filterContentsTheme={filterContentsTheme}
+          setFilterContents={setFilterContents}
         />
       </div>
     </div>

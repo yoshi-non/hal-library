@@ -7,7 +7,6 @@ const styles = {
   navbarContainer: css`
     color: white;
     font-weight: 900;
-    margin-bottom: 10px;
   `,
 }
 

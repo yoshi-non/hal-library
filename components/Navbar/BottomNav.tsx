@@ -10,13 +10,19 @@ const styles = {
     background-color: #232f3e;
     padding: 8px;
   `,
+
+  updateDate: css`
+    @media screen and (max-width: 930px) {
+      display: none;
+    }
+  `,
 }
 
 const BottomNav = ({setBookData}: SetBookData) => {
   return (
     <div css={styles.navbarBottom}>
       <FilterBtnBlock setBookData={setBookData}/>
-      <p>データ更新日:2023/01/04</p>
+      <p css={styles.updateDate}>データ更新日:2023/01/04</p>
     </div>
   )
 }

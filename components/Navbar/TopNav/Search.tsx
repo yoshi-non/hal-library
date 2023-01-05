@@ -15,12 +15,13 @@ const styles = {
     font-size: 1.8rem;
     border-radius: 10px 0px 0px 10px;
     padding: 5px 15px;
+    height: 43.6px;
     &:focus {
       outline: 2px solid #febd69;
     }
     &:focus+.searchBtn{
       outline: 2px solid #febd69;
-    } 
+    }
   `,
 
   searchBtn: css`
@@ -31,8 +32,8 @@ const styles = {
   `,
 
   searchIcon: css`
-    height: 100%;
     width: 43.6px;
+    height: 43.6px;
     background-color: #febd69;
     color: #131921;
     font-size: 1.8rem;
