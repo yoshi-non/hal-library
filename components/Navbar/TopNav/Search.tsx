@@ -9,13 +9,20 @@ const styles = {
   searchBlock: css`
     display: flex;
     align-items: center;
+    width: 40vw;
+    max-width: 500px;
+    @media screen and (max-width: 930px) {
+      width: 93vw;
+      max-width: 93vw;
+    }
   `,
 
   searchInput: css`
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     border-radius: 10px 0px 0px 10px;
     padding: 5px 15px;
     height: 43.6px;
+    width: 100%;
     &:focus {
       outline: 2px solid #febd69;
     }
@@ -36,7 +43,7 @@ const styles = {
     height: 43.6px;
     background-color: #febd69;
     color: #131921;
-    font-size: 1.8rem;
+    font-size: 1.1rem;
     border-radius: 0px 10px 10px 0px;
   `,
 }

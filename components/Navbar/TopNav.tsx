@@ -17,76 +17,65 @@ const styles = {
     @media screen and (max-width: 930px) {
       flex-direction: column;
       gap: 10px;
+      font-size: 0.8rem;
     }
   `,
 
-  leftBlock: css`
+  container__pc: css`
     display: flex;
     align-items: center;
     gap: 20px;
-    @media screen and (max-width: 930px) {
-      justify-content: space-between;
-      width: 100%;
-    }
+    justify-content: space-between;
+    width: 100%;
   `,
 
-  leftBlock__btn: css`
+  container__pc__leftBlock: css`
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  `,
+  container__pc__rightBlock: css`
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  `,
+
+  searchBlock: css`
+    /* スマホのときは非表示 */
     @media screen and (max-width: 930px) {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    @media screen and (min-width: 930px) {
       display: none;
     }
   `,
 
-  rightBlock: css`
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    @media screen and (max-width: 930px) {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-    }
-  `,
-
-  rightBlock__btn: css`
-    @media screen and (max-width: 930px) {
+  searchBlock__sm: css`
+    /* スマホ以外のときは非表示 */
+    @media screen and (min-width: 930px) {
       display: none;
     }
-    @media screen and (min-width: 930px) {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-  `
+  `,
 }
 
 const TopNav = ({setBookData}: SetBookData) => {
   return (
     <div css={styles.navbarTop}>
-      <div css={styles.leftBlock}>
-        <Logo/>
+      <div css={styles.container__pc}>
+        <div css={styles.container__pc__leftBlock}>
+          <Logo/>
+          <div css={styles.searchBlock}>
+            <Search setBookData={setBookData}/>
+          </div>
+        </div>
+        <div css={styles.container__pc__rightBlock}>
+          <ShowDescription/>
+          <NewRequestBtn/>
+          <SettingBtn/>
+        </div>
+      </div>
+
+      <div css={styles.searchBlock__sm}>
         <Search setBookData={setBookData}/>
-
-        {/* 画面サイズが小さいとき右上に表示 */}
-        <div css={styles.leftBlock__btn}>
-          <NewRequestBtn/>
-          <SettingBtn/>
-        </div>
       </div>
 
-      <div css={styles.rightBlock}>
-        <ShowDescription/>
-
-        {/* 通常の位置 */}
-        <div css={styles.rightBlock__btn}>
-          <NewRequestBtn/>
-          <SettingBtn/>
-        </div>
-      </div>
     </div>
   )
 }

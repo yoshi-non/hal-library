@@ -9,6 +9,11 @@ const styles = {
     justify-content: space-between;
     background-color: #232f3e;
     padding: 8px;
+    @media screen and (max-width: 680px) {
+      overflow-x: scroll;
+      overflow-y: hidden;
+      max-height: 64px;
+    }
   `,
 
   updateDate: css`

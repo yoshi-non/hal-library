@@ -3,8 +3,11 @@ import { css } from '@emotion/react'
 const styles = {
   showDescBlock: css`
     display: flex;
-    gap: 10px;
     align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   `,
 
   showDesc__normal: css`
@@ -31,34 +34,13 @@ const styles = {
     background-color: rgb(200, 100, 100);
   `,
 
-  leftBlock: css`
-    @media screen and (max-width: 930px) {
-      display: flex;
-      gap: 20px;
-    }
-  `,
-
-  rightBlock: css`
-    @media screen and (max-width: 930px) {
-      display: block;
-    }
-    @media screen and (min-width:930px) and ( max-width:1240px) {
-      display: none;
-    }
-    @media (min-width: 1240px) {
-      display: block;
-    }
-  `
 }
 
 const ShowDescription = () => {
   return (
     <div css={styles.showDescBlock}>
-      <div css={styles.leftBlock}>
-        <div css={styles.showDesc__normal}>通常:<p css={styles.showDesc__normalColor}></p></div>
-        <div css={styles.showDesc__ban}>禁帯出:<p css={styles.showDesc__banColor}></p></div>
-      </div>
-      <p css={styles.rightBlock}>※NK管理部は図書館にはありません</p>
+      <div css={styles.showDesc__normal}>通常:<p css={styles.showDesc__normalColor}></p></div>
+      <div css={styles.showDesc__ban}>禁帯出:<p css={styles.showDesc__banColor}></p></div>
     </div>
   )
 }

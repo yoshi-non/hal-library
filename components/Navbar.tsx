@@ -7,9 +7,9 @@ const styles = {
   navbarContainer: css`
     color: white;
     font-weight: 900;
+    font-size: 1.1rem;
   `,
 }
-
 
 const Navbar = ({setBookData}: SetBookData) => {
   return (

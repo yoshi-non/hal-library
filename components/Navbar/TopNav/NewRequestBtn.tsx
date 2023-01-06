@@ -1,4 +1,3 @@
-import React from 'react'
 import { css } from '@emotion/react'
 
 const styles = {
@@ -10,6 +9,12 @@ const styles = {
     border: 2px solid white;
     border-radius: 10px;
     transition: 0.3s;
+    min-width: 104px;
+    @media screen and (max-width: 930px) {
+      padding: 2px 6px;
+      font-size: 0.9rem;
+      min-width: 90px;
+    }
   `,
 }
 

@@ -12,12 +12,13 @@ const styles = {
   filBtnLeftBlock: css`
     display: flex;
     gap: 10px;
+    @media screen and (max-width: 680px) {
+      gap: 1px;
+    }
   `,
 
   filBtnRightBlock: css`
     margin-left: 10px;
-    display: flex;
-    gap: 15px;
   `,
 }
 

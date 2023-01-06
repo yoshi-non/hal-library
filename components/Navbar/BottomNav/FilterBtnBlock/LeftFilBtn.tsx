@@ -7,20 +7,32 @@ import { SetFilterContentsTheme } from '../../../../types/SetFilterContentsTheme
 const styles = {
   filLeftBtn__select: css`
     padding: 5px 8px;
-    font-size: 1.1rem;
     font-weight: 800;
     color: #febd69;
     background-color: inherit;
     transition: 0.3s;
+    @media screen and (max-width: 680px) {
+      min-width: 70px;
+      padding: 3px 3px;
+    }
+    @media screen and (min-width: 680px) {
+      font-size: 1.1rem;
+    }
   `,
   
   filLeftBtn: css`
     padding: 5px 8px;
-    font-size: 1.1rem;
     font-weight: 800;
     color: white;
     background-color: inherit;
     transition: 0.3s;
+    @media screen and (max-width: 680px) {
+      min-width: 70px;
+      padding: 3px 3px;
+    }
+    @media screen and (min-width: 680px) {
+      font-size: 1.1rem;
+    }
   `,
 }
 

@@ -10,9 +10,7 @@ const styles = {
 
 const SettingBtn = () => {
   return (
-    <div>
-      <SettingsIcon css={styles.settingIcon}/>
-    </div>
+    <SettingsIcon css={styles.settingIcon}/>
   )
 }
 
