@@ -1,7 +1,9 @@
+import InfoBlock from "./InfoBlock"
+
 const Step2 = () => {
   return (
     <div>
-      <div>Step2</div>
+      <InfoBlock/>
       <div>書籍名</div>
       <div>著名者（わかっている場合）</div>
       <div>出版社名（わかっている場合）</div>

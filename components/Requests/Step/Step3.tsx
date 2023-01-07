@@ -1,7 +1,9 @@
+import InfoBlock from "./InfoBlock"
+
 const Step3 = () => {
   return (
     <div>
-      <div>Step3</div>
+      <InfoBlock/>
       <div>リクエスト理由（具体的に記載すること）</div>
     </div>
   )
