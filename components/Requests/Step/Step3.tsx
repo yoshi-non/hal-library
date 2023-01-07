@@ -1,4 +1,4 @@
-import InfoBlock from "./InfoBlock"
+import InfoBlock from "./common/InfoBlock"
 
 const Step3 = () => {
   return (
