@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+import Link from 'next/link'
 
 const styles = {
   newRequestBtn: css`
@@ -20,7 +21,9 @@ const styles = {
 
 const NewRequestBtn = () => {
   return (
-    <button css={styles.newRequestBtn}>新しい書籍の<br/>申請はこちら</button>
+    <Link href={'/book-request'}>
+      <button css={styles.newRequestBtn}>新しい書籍の<br/>申請はこちら</button>
+    </Link>
   )
 }
 
