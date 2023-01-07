@@ -1,6 +1,9 @@
 const Step3 = () => {
   return (
-    <div>Step3</div>
+    <div>
+      <div>Step3</div>
+      <div>リクエスト理由（具体的に記載すること）</div>
+    </div>
   )
 }
 
