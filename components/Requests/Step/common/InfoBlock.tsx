@@ -7,7 +7,7 @@ const styles = {
     align-items: center;
     background-color: rgba(191,219,254,1);
     padding: 10px;
-    margin: 0 auto;
+    margin: 0 auto 2.5rem auto;
     width: 80%;
   `,
 
