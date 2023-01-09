@@ -23,13 +23,24 @@ const Requests = () => {
   const [curStep, setCurStep] = useState<number>(0) //現在のStep位置
   const curStepTitle = ["プロフィール", "書籍情報", "リクエスト理由", "ダウンロード"]
 
+  // Step1
+  const [schoolValue, setSchoolValue] = useState("")
+  const [classValue, setClassValue] = useState("")
+  const [usernameValue, setUsernameValue] = useState("")
+
   return (
     <div css={styles.container}>
       <div css={styles.curStepTitle}>{curStepTitle[curStep]}</div>
       <Progressbar curStep={curStep} setCurStep={setCurStep}/>
 
       {curStep === 0 && (
-        <Step1/>
+        <Step1
+          classValue={classValue}
+          usernameValue={usernameValue}
+          setSchoolValue={setSchoolValue}
+          setClassValue={setClassValue}
+          setUsernameValue={setUsernameValue}
+        />
       )}
       {curStep === 1 && (
         <Step2/>
