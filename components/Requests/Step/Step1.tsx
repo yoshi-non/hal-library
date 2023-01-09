@@ -1,6 +1,5 @@
 import { css } from "@emotion/react";
 import { SetClassValue, SetSchoolValue, SetUsernameValue } from "../../../types/Step";
-import InfoBlock from "./common/InfoBlock"
 
 const styles = {
   topInputBlock: css`
@@ -64,8 +63,7 @@ type Props = {
 
 const Step1 = ({classValue, usernameValue, setSchoolValue, setClassValue, setUsernameValue }: Props) => {
   return (
-    <div>
-      <InfoBlock/>
+    <>
       <div css={styles.topInputBlock}>
         <div css={styles.schoolValueBlock}>
           <span css={styles.inputBlock__title}>学校名</span>
@@ -106,7 +104,7 @@ const Step1 = ({classValue, usernameValue, setSchoolValue, setClassValue, setUse
           />
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

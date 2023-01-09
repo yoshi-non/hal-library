@@ -1,6 +1,8 @@
 import { css } from "@emotion/react";
 import { useState } from "react";
 import Progressbar from "./Progressbar";
+import InfoBlock from "./Step/InfoBlock";
+import NextPrevBtnBlock from "./Step/NextPrevBtnBlock";
 import Step1 from "./Step/Step1";
 import Step2 from "./Step/Step2";
 import Step3 from "./Step/Step3";
@@ -34,22 +36,49 @@ const Requests = () => {
       <Progressbar curStep={curStep} setCurStep={setCurStep}/>
 
       {curStep === 0 && (
-        <Step1
-          classValue={classValue}
-          usernameValue={usernameValue}
-          setSchoolValue={setSchoolValue}
-          setClassValue={setClassValue}
-          setUsernameValue={setUsernameValue}
-        />
+        <>
+          <InfoBlock/>
+          <Step1
+            classValue={classValue}
+            usernameValue={usernameValue}
+            setSchoolValue={setSchoolValue}
+            setClassValue={setClassValue}
+            setUsernameValue={setUsernameValue}
+          />
+          <NextPrevBtnBlock
+            curStep={curStep}
+            setCurStep={setCurStep}
+          />
+        </>
       )}
       {curStep === 1 && (
-        <Step2/>
+        <>
+          <InfoBlock/>
+          <Step2/>
+          <NextPrevBtnBlock
+            curStep={curStep}
+            setCurStep={setCurStep}
+          />
+        </>
       )}
       {curStep === 2 && (
-        <Step3/>
+        <>
+          <InfoBlock/>
+          <Step3/>
+          <NextPrevBtnBlock
+            curStep={curStep}
+            setCurStep={setCurStep}
+          />
+        </>
       )}
       {curStep === 3 && (
-        <Step4/>
+        <>
+          <Step4/>
+          <NextPrevBtnBlock
+            curStep={curStep}
+            setCurStep={setCurStep}
+          />
+        </>
       )}
     </div>
   )

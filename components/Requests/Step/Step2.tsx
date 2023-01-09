@@ -1,9 +1,6 @@
-import InfoBlock from "./common/InfoBlock"
-
 const Step2 = () => {
   return (
     <div>
-      <InfoBlock/>
       <div>書籍名</div>
       <div>著名者（わかっている場合）</div>
       <div>出版社名（わかっている場合）</div>
