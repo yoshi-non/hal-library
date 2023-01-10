@@ -27,3 +27,7 @@ export type SetCompanyValue = {
 export type SetRemarksValue = {
     setRemarksValue: Dispatch<SetStateAction<string>>
 }
+
+export type SetReasonValue = {
+    setReasonValue: Dispatch<SetStateAction<string>>
+}

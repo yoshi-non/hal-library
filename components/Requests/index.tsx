@@ -36,6 +36,9 @@ const Requests = () => {
   const [companyValue, setCompanyValue] = useState("")
   const [remarksValue, setRemarksValue] = useState("")
 
+  // Step3
+  const [reasonValue, setReasonValue] = useState("")
+
   return (
     <div css={styles.container}>
       <div css={styles.curStepTitle}>{curStepTitle[curStep]}</div>
@@ -79,7 +82,10 @@ const Requests = () => {
       {curStep === 2 && (
         <>
           <InfoBlock/>
-          <Step3/>
+          <Step3
+            reasonValue={reasonValue}
+            setReasonValue={setReasonValue}
+          />
           <NextPrevBtnBlock
             curStep={curStep}
             setCurStep={setCurStep}
