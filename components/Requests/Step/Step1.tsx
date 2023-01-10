@@ -2,10 +2,7 @@ import { css } from "@emotion/react";
 import { SetClassValue, SetSchoolValue, SetUsernameValue } from "../../../types/Step";
 
 const styles = {
-  topInputBlock: css`
-    margin-bottom: 2.5rem;
-  `,
-  schoolValueBlock: css`
+  inputBlock: css`
     width: 90%;
     margin: 0 auto;
     display: flex;
@@ -30,7 +27,7 @@ const styles = {
     }
   `,
 
-  bottomInputBlock: css`
+  inputHalfBlockBox: css`
     width: 90%;
     margin: 0 auto;
     display: flex;
@@ -41,19 +38,12 @@ const styles = {
     margin-bottom: 2.5rem;
   `,
 
-  classValueBlock: css`
+  inputHalfBlock: css`
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 5px;
-  `,
-  
-  usernameValueBlock: css`
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  `,
+  `,  
 }
 
 type Props = {
@@ -64,25 +54,23 @@ type Props = {
 const Step1 = ({classValue, usernameValue, setSchoolValue, setClassValue, setUsernameValue }: Props) => {
   return (
     <>
-      <div css={styles.topInputBlock}>
-        <div css={styles.schoolValueBlock}>
-          <span css={styles.inputBlock__title}>学校名</span>
-          <select
-            onChange={(e) => setSchoolValue(e.target.value)}
-            css={styles.inputBlock__input}
-          >
-            <option value=""></option>
-            <option value="MODE">MODE</option>
-            <option value="HAL">HAL</option>
-            <option value="ISEN">ISEN</option>
-            <option value="PIIF">PIIF</option>
-            <option value="IPUT">IPUT</option>
-          </select>
-        </div>
+      <div css={styles.inputBlock}>
+        <span css={styles.inputBlock__title}>学校名</span>
+        <select
+          onChange={(e) => setSchoolValue(e.target.value)}
+          css={styles.inputBlock__input}
+        >
+          <option value=""></option>
+          <option value="MODE">MODE</option>
+          <option value="HAL">HAL</option>
+          <option value="ISEN">ISEN</option>
+          <option value="PIIF">PIIF</option>
+          <option value="IPUT">IPUT</option>
+        </select>
       </div>
 
-      <div css={styles.bottomInputBlock}>
-        <div css={styles.classValueBlock}>
+      <div css={styles.inputHalfBlockBox}>
+        <div css={styles.inputHalfBlock}>
           <span css={styles.inputBlock__title}>クラス記号</span>
           <input
             type="text"
@@ -93,7 +81,7 @@ const Step1 = ({classValue, usernameValue, setSchoolValue, setClassValue, setUse
           />
         </div>
 
-        <div css={styles.usernameValueBlock}>
+        <div css={styles.inputHalfBlock}>
           <span css={styles.inputBlock__title}>氏名</span>
           <input
             type="text"

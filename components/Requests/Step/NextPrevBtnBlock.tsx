@@ -6,6 +6,7 @@ const styles = {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin-bottom: 2rem;
   `,
   nextPrevBtn: css`
     flex: 1;

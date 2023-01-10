@@ -11,4 +11,19 @@ export type SetClassValue = {
 export type SetUsernameValue = {
     setUsernameValue: Dispatch<SetStateAction<string>>
 }
-  
+
+export type SetBooknameValue = {
+    setBooknameValue: Dispatch<SetStateAction<string>>
+}
+
+export type SetAuthorValue = {
+    setAuthorValue: Dispatch<SetStateAction<string>>
+}
+
+export type SetCompanyValue = {
+    setCompanyValue: Dispatch<SetStateAction<string>>
+}
+
+export type SetRemarksValue = {
+    setRemarksValue: Dispatch<SetStateAction<string>>
+}

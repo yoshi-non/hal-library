@@ -30,6 +30,12 @@ const Requests = () => {
   const [classValue, setClassValue] = useState("")
   const [usernameValue, setUsernameValue] = useState("")
 
+  // Step2
+  const [booknameValue, setBooknameValue] = useState("")
+  const [authorValue, setAuthorValue] = useState("")
+  const [companyValue, setCompanyValue] = useState("")
+  const [remarksValue, setRemarksValue] = useState("")
+
   return (
     <div css={styles.container}>
       <div css={styles.curStepTitle}>{curStepTitle[curStep]}</div>
@@ -54,7 +60,16 @@ const Requests = () => {
       {curStep === 1 && (
         <>
           <InfoBlock/>
-          <Step2/>
+          <Step2
+            booknameValue={booknameValue}
+            authorValue={authorValue}
+            companyValue={companyValue}
+            remarksValue={remarksValue}
+            setBooknameValue={setBooknameValue}
+            setAuthorValue={setAuthorValue}
+            setCompanyValue={setCompanyValue}
+            setRemarksValue={setRemarksValue}
+          />
           <NextPrevBtnBlock
             curStep={curStep}
             setCurStep={setCurStep}
