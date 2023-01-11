@@ -94,7 +94,16 @@ const Requests = () => {
       )}
       {curStep === 3 && (
         <>
-          <Step4/>
+          <Step4
+            schoolValue={schoolValue}
+            classValue={classValue}
+            usernameValue={usernameValue}
+            booknameValue={booknameValue}
+            authorValue={authorValue}
+            companyValue={companyValue}
+            remarksValue={remarksValue}
+            reasonValue={reasonValue}
+          />
           <NextPrevBtnBlock
             curStep={curStep}
             setCurStep={setCurStep}
