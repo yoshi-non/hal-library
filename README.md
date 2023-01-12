@@ -7,5 +7,10 @@
 当ソースコードはフロントエンドの開発コードになります。
 
 ## デモ画像(画像は開発途中でリリース時には変更される可能性があります)
+
+### 書籍画面
 ![img1](https://user-images.githubusercontent.com/83369665/211257685-aaef31f1-e3db-4982-96dd-98e6a5f997a6.jpg)
-![img2](https://user-images.githubusercontent.com/83369665/211257702-b7e32484-9241-4c30-b0a9-140446d8bac7.png)
+
+### 新しい書籍申請画面
+![request-demo1](https://user-images.githubusercontent.com/83369665/212017427-204d4c6d-d57d-46c9-a4d8-a4794286dc1c.png)
+![request-demo2](https://user-images.githubusercontent.com/83369665/212017440-a19fa07d-e5f3-4685-b46d-03420531ec9b.png)
