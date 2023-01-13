@@ -4,6 +4,7 @@ import { jsPDF } from 'jspdf';
 import DownloadIcon from '@mui/icons-material/Download';
 import { zeroPadding } from '../../../../lib/PDF';
 import { useState, useEffect } from 'react'
+import NoteBlock from './NoteBlock';
 
 const styles = {
   container: css`
@@ -137,7 +138,6 @@ const styles = {
     border-radius: 10px;
     background-color: #febd69;
   `,
-
 }
 
 type Props = {
@@ -285,6 +285,8 @@ const PDF = ({schoolValue, classValue, usernameValue, booknameValue, authorValue
         <div css={styles.downloadBlock}>
           <button css={styles.downloadBtn} onClick={() => printDocument()}><DownloadIcon/>&nbsp;ダウンロード</button>
         </div>
+
+        <NoteBlock />
 
       </div>
   );
