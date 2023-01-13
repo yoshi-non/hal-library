@@ -2,6 +2,8 @@ import { css } from '@emotion/react';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 import DownloadIcon from '@mui/icons-material/Download';
+import { zeroPadding } from '../../../../lib/PDF';
+import { useState, useEffect } from 'react'
 
 const styles = {
   container: css`
@@ -164,6 +166,22 @@ const PDF = ({schoolValue, classValue, usernameValue, booknameValue, authorValue
     }
   }
 
+  const [year, setYear] = useState<number>()
+  const [month, setMonth] = useState<string>()
+  const [date, setDate] = useState<string>()
+  const getDate = () => {
+    let today = new Date()
+
+    setYear(today.getFullYear())
+    setMonth(zeroPadding(today.getMonth() + 1, 2))
+    setDate(zeroPadding(today.getDate(), 2))
+  }
+
+  useEffect(() => {
+    getDate()
+  }, [])
+  
+
   return (
       <div css={styles.container}>
         <div css={styles.pdfBlock}>
@@ -171,7 +189,7 @@ const PDF = ({schoolValue, classValue, usernameValue, booknameValue, authorValue
           <div className="invoicePages" id="invoicePageOne" css={styles.pageStyle}>
             <div css={styles.pdfBlock__header}>
               <h2 css={styles.pdfBlock__header__title}>リクエストカード</h2>
-              <p css={styles.pdfBlock__header__date}>申請日&nbsp;&nbsp;2023&nbsp;&nbsp;年&nbsp;&nbsp;01&nbsp;&nbsp;月&nbsp;&nbsp;12&nbsp;&nbsp;日</p>
+              <p css={styles.pdfBlock__header__date}>申請日&nbsp;&nbsp;{year}&nbsp;&nbsp;年&nbsp;&nbsp;{month}&nbsp;&nbsp;月&nbsp;&nbsp;{date}&nbsp;&nbsp;日</p>
             </div>
             
             <div css={styles.inputContainer}>
