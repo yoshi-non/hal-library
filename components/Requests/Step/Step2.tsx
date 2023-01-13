@@ -63,6 +63,7 @@ const Step2 = ({booknameValue, authorValue, companyValue, remarksValue, setBookn
           onChange={(e) => setBooknameValue(e.target.value)}
           value={booknameValue}
           placeholder="書籍名"
+          maxLength={80}
           css={styles.inputBlock__input}
         />
       </div>
@@ -75,6 +76,7 @@ const Step2 = ({booknameValue, authorValue, companyValue, remarksValue, setBookn
             onChange={(e) => setAuthorValue(e.target.value)}
             value={authorValue}
             placeholder="著名者"
+            maxLength={40}
             css={styles.inputBlock__input}
           />
         </div>
@@ -85,6 +87,7 @@ const Step2 = ({booknameValue, authorValue, companyValue, remarksValue, setBookn
             onChange={(e) => setCompanyValue(e.target.value)}
             value={companyValue}
             placeholder="出版社名"
+            maxLength={40}
             css={styles.inputBlock__input}
           />
         </div>
@@ -96,6 +99,7 @@ const Step2 = ({booknameValue, authorValue, companyValue, remarksValue, setBookn
           onChange={(e) => setRemarksValue(e.target.value)}
           value={remarksValue}
           placeholder="ジャンル・内容など"
+          maxLength={120}
           css={styles.inputBlock__input}
         />
       </div>
