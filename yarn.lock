@@ -2452,10 +2452,10 @@ react-is@^18.2.0:
   resolved "https://registry.npmjs.org/react-is/-/react-is-18.2.0.tgz"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
-react-pdf@^6.2.1:
-  version "6.2.1"
-  resolved "https://registry.npmjs.org/react-pdf/-/react-pdf-6.2.1.tgz"
-  integrity sha512-yTMMFebYardEwRTLInT/ShVU2Flssh8ccgkc1DCAW8m+ONEynWWqgFy6VVkax4mpSoAPNXRgbfV7rETLQFJBNw==
+react-pdf@^6.2.2:
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/react-pdf/-/react-pdf-6.2.2.tgz#61dbf1cd32b49bb452c8dd26e7ee7b2f987e4904"
+  integrity sha512-huNWhzzTAb3t1mWA6WOR9yQRCbcZ6uXCGC46cEAgEhGqvXTB6RcHm+1DS2r9OdPNUZ9SZTuR6jZ1BNOJIiEing==
   dependencies:
     "@babel/runtime" "^7.0.0"
     clsx "^1.2.1"
