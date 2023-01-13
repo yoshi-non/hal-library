@@ -77,6 +77,7 @@ const Step1 = ({classValue, usernameValue, setSchoolValue, setClassValue, setUse
             onChange={(e) => setClassValue(e.target.value)}
             value={classValue}
             placeholder="IT99"
+            maxLength={20}
             css={styles.inputBlock__input}
           />
         </div>
@@ -88,6 +89,7 @@ const Step1 = ({classValue, usernameValue, setSchoolValue, setClassValue, setUse
             onChange={(e) => setUsernameValue(e.target.value)}
             value={usernameValue}
             placeholder="名前太郎"
+            maxLength={20}
             css={styles.inputBlock__input}
           />
         </div>

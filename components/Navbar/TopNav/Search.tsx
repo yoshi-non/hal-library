@@ -73,6 +73,7 @@ const Search = ({setBookData}: SetBookData) => {
         value={searchText}
         onChange={(event) => setSearchText(event.target.value)}
         placeholder="検索"
+        maxLength={100}
         onKeyDown={(event) => handleKeyDown(event.key)}
       />
       <button

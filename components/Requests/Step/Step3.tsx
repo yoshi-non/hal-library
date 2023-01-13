@@ -17,7 +17,7 @@ const styles = {
   `,
 
   inputBlock__textarea: css`
-    height: 200px;
+    height: 100px;
     width: 100%;
     font-size: 1.2rem;
     font-weight: 900;
@@ -45,6 +45,7 @@ const Step3 = ({reasonValue, setReasonValue}: Props) => {
           onChange={(e) => setReasonValue(e.target.value)}
           value={reasonValue}
           placeholder="リクエスト理由"
+          maxLength={120}
           css={styles.inputBlock__textarea}
         />
       </div>
