@@ -1,24 +1,29 @@
 # 環境構築
 
 - バージョン
-  - nodejs : v16.13.2
+  - node : 16.13.2
+  - yarn : 1.22.17
 
 ```bash
-# プロジェクト作成
-yarn create next-app --typescript
-```
+# パッケージインストール
+yarn install
 
-```bash
 # 開発サーバー起動
 yarn dev
+
+# ビルド
+yarn build
+
+# ビルド環境サーバー起動
+yarn start
 ```
 
-```bash
-# ライブラリインストール
-yarn add framer-motion
-yarn add @emotion/react
+## 各ライブラリの使用目的
 
-yarn add @mui/icons-material @mui/material @emotion/styled @emotion/react
-
-yarn add @react-pdf/renderer
-```
+| ライブラリ名 | 使用目的 |
+| --- | --- |
+| framer-motion | アニメーション |
+| @emotion/react | CSS |
+| @mui/icons-material @mui/material @emotion/styled @emotion/react | アイコン |
+| html2canvas | キャンバス |
+| react-pdf --save @types/react-pdf | PDF作成 |
