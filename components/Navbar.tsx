@@ -2,6 +2,7 @@ import BottomNav from './Navbar/BottomNav'
 import TopNav from './Navbar/TopNav'
 import { css } from "@emotion/react"
 import { SetBookData } from '../types/SetBookData'
+import { useRouter } from 'next/router'
 
 const styles = {
   navbarContainer: css`
@@ -12,13 +13,17 @@ const styles = {
 }
 
 const Navbar = ({setBookData}: SetBookData) => {
+  const router = useRouter()
+  console.log(router.pathname);
   return (
     <div css={styles.navbarContainer}>
       {/* ホーム・検索・設定 */}
       <TopNav setBookData={setBookData}/>
 
       {/* フィルタリング */}
-      <BottomNav setBookData={setBookData}/>
+      {router.pathname == "/" && (
+        <BottomNav setBookData={setBookData}/>
+      )}
     </div>
   )
 }
