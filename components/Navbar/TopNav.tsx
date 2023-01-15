@@ -5,6 +5,7 @@ import NewRequestBtn from './TopNav/NewRequestBtn'
 import { css } from "@emotion/react";
 import { SetBookData } from '../../types/SetBookData'
 import SettingBtn from './TopNav/SettingBtn'
+import { useRouter } from 'next/router'
 
 const styles = {
   navbarTop: css`
@@ -56,26 +57,31 @@ const styles = {
 }
 
 const TopNav = ({setBookData}: SetBookData) => {
+  const router = useRouter()
   return (
     <div css={styles.navbarTop}>
       <div css={styles.container__pc}>
         <div css={styles.container__pc__leftBlock}>
           <Logo/>
-          <div css={styles.searchBlock}>
-            <Search setBookData={setBookData}/>
-          </div>
+          {router.pathname == "/" && (
+            <div css={styles.searchBlock}>
+              <Search setBookData={setBookData}/>
+            </div>
+          )}
         </div>
         <div css={styles.container__pc__rightBlock}>
-          <ShowDescription/>
+          {router.pathname == "/" && (
+            <ShowDescription/>
+          )}
           <NewRequestBtn/>
           <SettingBtn/>
         </div>
       </div>
-
-      <div css={styles.searchBlock__sm}>
-        <Search setBookData={setBookData}/>
-      </div>
-
+      {router.pathname == "/" && (
+        <div css={styles.searchBlock__sm}>
+          <Search setBookData={setBookData}/>
+        </div>
+      )}
     </div>
   )
 }

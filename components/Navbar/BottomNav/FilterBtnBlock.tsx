@@ -24,7 +24,7 @@ const styles = {
 
 const FilterBtnBlock = ({setBookData}: SetBookData) => {
   const [filterContents, setFilterContents] = useState<string>("")
-  const [filterContentsTheme, setFilterContentsTheme] = useState<string>("")
+  const [filterContentsTheme, setFilterContentsTheme] = useState<string>("すべて")
   const arrContentsTheme = ["すべて", "新着本", "HAL", "MODE", "ISEN", "NK管理部"]
 
   return (
