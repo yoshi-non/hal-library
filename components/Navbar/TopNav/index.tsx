@@ -1,10 +1,10 @@
-import Search from './TopNav/Search'
-import Logo from './TopNav/Logo'
-import ShowDescription from './TopNav/ShowDescription'
-import NewRequestBtn from './TopNav/NewRequestBtn'
+import Search from './Search'
+import Logo from './Logo'
+import ShowDescription from './ShowDescription'
+import NewRequestBtn from './NewRequestBtn'
 import { css } from "@emotion/react";
-import { SetBookData } from '../../types/SetBookData'
-import SettingBtn from './TopNav/SettingBtn'
+import { SetBookData } from '../../../types/SetBookData'
+import SettingBtn from './SettingBtn'
 import { useRouter } from 'next/router'
 
 const styles = {

@@ -1,7 +1,7 @@
-import BottomNav from './Navbar/BottomNav'
-import TopNav from './Navbar/TopNav'
+import BottomNav from './BottomNav'
+import TopNav from './TopNav'
 import { css } from "@emotion/react"
-import { SetBookData } from '../types/SetBookData'
+import { SetBookData } from '../../types/SetBookData'
 import { useRouter } from 'next/router'
 
 const styles = {

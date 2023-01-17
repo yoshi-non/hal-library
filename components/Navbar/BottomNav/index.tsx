@@ -1,6 +1,6 @@
-import FilterBtnBlock from './BottomNav/FilterBtnBlock'
+import FilterBtnBlock from './FilterBtnBlock'
 import { css } from '@emotion/react'
-import { SetBookData } from '../../types/SetBookData'
+import { SetBookData } from '../../../types/SetBookData'
 
 const styles = {
   navbarBottom: css`
