@@ -3,9 +3,9 @@ import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import TextsmsIcon from '@mui/icons-material/Textsms';
 import DownloadDoneIcon from '@mui/icons-material/DownloadDone';
 import { css } from '@emotion/react';
-import StepBlock from './Progressbar/StepBlock';
-import { SetCurStep } from '../../types/SetCurStep';
-import StepBar from './Progressbar/StepBar';
+import StepBlock from './StepBlock';
+import { SetCurStep } from '../../../types/SetCurStep';
+import StepBar from './StepBar';
 
 const styles = {
   container: css`

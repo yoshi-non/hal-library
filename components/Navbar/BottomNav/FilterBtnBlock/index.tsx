@@ -1,7 +1,7 @@
-import LeftFilBtn from './FilterBtnBlock/LeftFilBtn'
-import RightFilBtn from './FilterBtnBlock/RightFilBtn'
+import LeftFilBtn from './LeftFilBtn'
+import RightFilBtn from './RightFilBtn'
 import { css } from '@emotion/react'
-import { SetBookData } from '../../../types/SetBookData'
+import { SetBookData } from '../../../../types/SetBookData'
 import { useState } from 'react'
 
 const styles = {
