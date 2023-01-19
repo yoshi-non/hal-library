@@ -1,7 +1,4 @@
-import { css } from '@emotion/react'
 import PDF from './PDF'
-
-const styles = {}
 
 type Props = {
   [key : string] : string

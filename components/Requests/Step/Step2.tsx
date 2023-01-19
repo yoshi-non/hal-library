@@ -1,33 +1,9 @@
 import { css } from "@emotion/react"
 import { useEffect, useState } from "react"
 import { SetAuthorValue, SetBooknameValue, SetCompanyValue, SetRemarksValue } from "../../../types/Step"
+import InputBlock from "./InputBlock"
 
 const styles = {
-  inputBlock: css`
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin-bottom: 2.5rem;
-  `,
-
-  inputBlock__titleBox: css`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  `,
-
-  inputBlock__title: css`
-    font-weight: 900;
-    color: rgba(107,114,128,1);
-  `,
-
-  inputBlock__count: css`
-    font-weight: 900;
-    color: #6490e7;
-  `,
-
   inputBlock__input: css`
     font-size: 1.2rem;
     border: 1px solid gray;
@@ -38,7 +14,7 @@ const styles = {
       color: rgba(107,114,128,1);
     }
   `,
-
+  
   inputHalfBlockBox: css`
     width: 90%;
     margin: 0 auto;
@@ -49,13 +25,6 @@ const styles = {
     gap: 40px;
     margin-bottom: 2.5rem;
   `,
-
-  inputHalfBlock: css`
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  `,  
 }
 
 type Props = {
@@ -85,11 +54,12 @@ const Step2 = ({booknameValue, authorValue, companyValue, remarksValue, setBookn
 
   return (
     <>
-      <div css={styles.inputBlock}>
-        <div css={styles.inputBlock__titleBox}>
-          <span css={styles.inputBlock__title}>書籍名</span>
-          <span css={styles.inputBlock__count}>{booknameCnt}/80</span>
-        </div>
+      <InputBlock
+        title="書籍名"
+        count={booknameCnt}
+        isHalf={false}
+        maxCount={80}
+      >
         <input
           type="text"
           onChange={(e) => setBooknameValue(e.target.value)}
@@ -98,14 +68,14 @@ const Step2 = ({booknameValue, authorValue, companyValue, remarksValue, setBookn
           maxLength={80}
           css={styles.inputBlock__input}
         />
-      </div>
-
+      </InputBlock>
       <div css={styles.inputHalfBlockBox}>
-        <div css={styles.inputHalfBlock}>
-          <div css={styles.inputBlock__titleBox}>
-            <span css={styles.inputBlock__title}>著名者（わかっている場合）</span>
-            <span css={styles.inputBlock__count}>{authorCnt}/40</span>
-          </div>
+        <InputBlock
+          title="著名者（わかっている場合）"
+          count={authorCnt}
+          isHalf={true}
+          maxCount={40}
+        >
           <input
             type="text"
             onChange={(e) => setAuthorValue(e.target.value)}
@@ -114,12 +84,13 @@ const Step2 = ({booknameValue, authorValue, companyValue, remarksValue, setBookn
             maxLength={40}
             css={styles.inputBlock__input}
           />
-        </div>
-        <div css={styles.inputHalfBlock}>
-          <div css={styles.inputBlock__titleBox}>
-            <span css={styles.inputBlock__title}>出版社名（わかっている場合）</span>
-            <span css={styles.inputBlock__count}>{companyCnt}/40</span>
-          </div>
+        </InputBlock>
+        <InputBlock
+          title="出版社名（わかっている場合）"
+          count={companyCnt}
+          isHalf={true}
+          maxCount={40}
+        >
           <input
             type="text"
             onChange={(e) => setCompanyValue(e.target.value)}
@@ -128,13 +99,15 @@ const Step2 = ({booknameValue, authorValue, companyValue, remarksValue, setBookn
             maxLength={40}
             css={styles.inputBlock__input}
           />
-        </div>
+        </InputBlock>
+
       </div>
-      <div css={styles.inputBlock}>
-        <div css={styles.inputBlock__titleBox}>
-          <span css={styles.inputBlock__title}>書籍名が決まっていない場合、ジャンル・内容など</span>
-          <span css={styles.inputBlock__count}>{remarksCnt}/120</span>
-        </div>
+      <InputBlock
+        title="書籍名が決まっていない場合、ジャンル・内容など"
+        count={remarksCnt}
+        isHalf={false}
+        maxCount={120}
+      >
         <input
           type="text"
           onChange={(e) => setRemarksValue(e.target.value)}
@@ -143,7 +116,7 @@ const Step2 = ({booknameValue, authorValue, companyValue, remarksValue, setBookn
           maxLength={120}
           css={styles.inputBlock__input}
         />
-      </div>
+      </InputBlock>
     </>
   )
 }
