@@ -1,4 +1,5 @@
 import { css } from "@emotion/react"
+import { useEffect, useState } from "react"
 import { SetReasonValue } from "../../../types/Step"
 
 const styles = {
@@ -11,9 +12,20 @@ const styles = {
     margin-bottom: 2.5rem;
   `,
 
+  inputBlock__titleBox: css`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  `,
+
   inputBlock__title: css`
     font-weight: 900;
     color: rgba(107,114,128,1);
+  `,
+
+  inputBlock__count: css`
+    font-weight: 900;
+    color: #6490e7;
   `,
 
   inputBlock__textarea: css`
@@ -37,10 +49,17 @@ type Props = {
 } & SetReasonValue
 
 const Step3 = ({reasonValue, setReasonValue}: Props) => {
+  const [reasonCnt, setReasonCnt] = useState(0)
+  useEffect(() => {
+    setReasonCnt(reasonValue.length)
+  }, [reasonValue])
   return (
     <>
       <div css={styles.inputBlock}>
-        <span css={styles.inputBlock__title}>リクエスト理由（具体的に記載すること）</span>
+        <div css={styles.inputBlock__titleBox}>
+          <span css={styles.inputBlock__title}>リクエスト理由（具体的に記載すること）</span>
+          <span css={styles.inputBlock__count}>{reasonCnt}/120</span>
+        </div>
         <textarea
           onChange={(e) => setReasonValue(e.target.value)}
           value={reasonValue}

@@ -1,4 +1,5 @@
 import { css } from "@emotion/react"
+import { useEffect, useState } from "react"
 import { SetAuthorValue, SetBooknameValue, SetCompanyValue, SetRemarksValue } from "../../../types/Step"
 
 const styles = {
@@ -11,9 +12,20 @@ const styles = {
     margin-bottom: 2.5rem;
   `,
 
+  inputBlock__titleBox: css`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  `,
+
   inputBlock__title: css`
     font-weight: 900;
     color: rgba(107,114,128,1);
+  `,
+
+  inputBlock__count: css`
+    font-weight: 900;
+    color: #6490e7;
   `,
 
   inputBlock__input: css`
@@ -54,10 +66,30 @@ type Props = {
 } & SetBooknameValue & SetAuthorValue & SetCompanyValue & SetRemarksValue
 
 const Step2 = ({booknameValue, authorValue, companyValue, remarksValue, setBooknameValue, setAuthorValue, setCompanyValue, setRemarksValue}: Props) => {
+  const [booknameCnt, setBooknameCnt] = useState(0)
+  const [authorCnt, setAuthorCnt] = useState(0)
+  const [companyCnt, setCompanyCnt] = useState(0)
+  const [remarksCnt, setRemarksCnt] = useState(0)
+  useEffect(() => {
+    setBooknameCnt(booknameValue.length)
+  }, [booknameValue])
+  useEffect(() => {
+    setAuthorCnt(authorValue.length)
+  }, [authorValue])
+  useEffect(() => {
+    setCompanyCnt(companyValue.length)
+  }, [companyValue])
+  useEffect(() => {
+    setRemarksCnt(remarksValue.length)
+  }, [remarksValue])
+
   return (
     <>
       <div css={styles.inputBlock}>
-        <span css={styles.inputBlock__title}>書籍名</span>
+        <div css={styles.inputBlock__titleBox}>
+          <span css={styles.inputBlock__title}>書籍名</span>
+          <span css={styles.inputBlock__count}>{booknameCnt}/80</span>
+        </div>
         <input
           type="text"
           onChange={(e) => setBooknameValue(e.target.value)}
@@ -70,7 +102,10 @@ const Step2 = ({booknameValue, authorValue, companyValue, remarksValue, setBookn
 
       <div css={styles.inputHalfBlockBox}>
         <div css={styles.inputHalfBlock}>
-          <span css={styles.inputBlock__title}>著名者（わかっている場合）</span>
+          <div css={styles.inputBlock__titleBox}>
+            <span css={styles.inputBlock__title}>著名者（わかっている場合）</span>
+            <span css={styles.inputBlock__count}>{authorCnt}/40</span>
+          </div>
           <input
             type="text"
             onChange={(e) => setAuthorValue(e.target.value)}
@@ -81,7 +116,10 @@ const Step2 = ({booknameValue, authorValue, companyValue, remarksValue, setBookn
           />
         </div>
         <div css={styles.inputHalfBlock}>
-          <span css={styles.inputBlock__title}>出版社名（わかっている場合）</span>
+          <div css={styles.inputBlock__titleBox}>
+            <span css={styles.inputBlock__title}>出版社名（わかっている場合）</span>
+            <span css={styles.inputBlock__count}>{companyCnt}/40</span>
+          </div>
           <input
             type="text"
             onChange={(e) => setCompanyValue(e.target.value)}
@@ -93,7 +131,10 @@ const Step2 = ({booknameValue, authorValue, companyValue, remarksValue, setBookn
         </div>
       </div>
       <div css={styles.inputBlock}>
-        <span css={styles.inputBlock__title}>書籍名が決まっていない場合、ジャンル・内容など</span>
+        <div css={styles.inputBlock__titleBox}>
+          <span css={styles.inputBlock__title}>書籍名が決まっていない場合、ジャンル・内容など</span>
+          <span css={styles.inputBlock__count}>{remarksCnt}/120</span>
+        </div>
         <input
           type="text"
           onChange={(e) => setRemarksValue(e.target.value)}

@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import { useEffect, useState } from "react";
 import { SetClassValue, SetSchoolValue, SetUsernameValue } from "../../../types/Step";
 
 const styles = {
@@ -11,9 +12,20 @@ const styles = {
     margin-bottom: 2.5rem;
   `,
 
+  inputBlock__titleBox: css`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  `,
+
   inputBlock__title: css`
     font-weight: 900;
     color: rgba(107,114,128,1);
+  `,
+
+  inputBlock__count: css`
+    font-weight: 900;
+    color: #6490e7;
   `,
 
   inputBlock__input: css`
@@ -52,6 +64,15 @@ type Props = {
 } & SetSchoolValue & SetClassValue & SetUsernameValue
 
 const Step1 = ({classValue, usernameValue, setSchoolValue, setClassValue, setUsernameValue }: Props) => {
+  const [classCnt, setClassCnt] = useState(0)
+  const [usernameCnt, setUsernameCnt] = useState(0)
+  useEffect(() => {
+    setClassCnt(classValue.length)
+  }, [classValue])
+  useEffect(() => {
+    setUsernameCnt(usernameValue.length)
+  }, [usernameValue])
+  
   return (
     <>
       <div css={styles.inputBlock}>
@@ -71,7 +92,10 @@ const Step1 = ({classValue, usernameValue, setSchoolValue, setClassValue, setUse
 
       <div css={styles.inputHalfBlockBox}>
         <div css={styles.inputHalfBlock}>
-          <span css={styles.inputBlock__title}>クラス記号</span>
+          <div css={styles.inputBlock__titleBox}>
+            <span css={styles.inputBlock__title}>クラス記号</span>
+            <span css={styles.inputBlock__count}>{classCnt}/20</span>
+          </div>
           <input
             type="text"
             onChange={(e) => setClassValue(e.target.value)}
@@ -83,7 +107,10 @@ const Step1 = ({classValue, usernameValue, setSchoolValue, setClassValue, setUse
         </div>
 
         <div css={styles.inputHalfBlock}>
-          <span css={styles.inputBlock__title}>氏名</span>
+          <div css={styles.inputBlock__titleBox}>
+            <span css={styles.inputBlock__title}>氏名</span>
+            <span css={styles.inputBlock__count}>{usernameCnt}/20</span>
+          </div>
           <input
             type="text"
             onChange={(e) => setUsernameValue(e.target.value)}
