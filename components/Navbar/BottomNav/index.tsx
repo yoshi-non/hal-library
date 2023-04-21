@@ -1,6 +1,6 @@
-import FilterBtnBlock from './FilterBtnBlock'
-import { css } from '@emotion/react'
-import { SetBookData } from '../../../types/SetBookData'
+import FilterBtnBlock from "./FilterBtnBlock";
+import { css } from "@emotion/react";
+import { SetBookData } from "../../../types/SetBookData";
 
 const styles = {
   navbarBottom: css`
@@ -21,15 +21,15 @@ const styles = {
       display: none;
     }
   `,
-}
+};
 
-const BottomNav = ({setBookData}: SetBookData) => {
+const BottomNav = ({ setBookData }: SetBookData) => {
   return (
     <div css={styles.navbarBottom}>
-      <FilterBtnBlock setBookData={setBookData}/>
-      <p css={styles.updateDate}>データ更新日:2023/01/04</p>
+      <FilterBtnBlock setBookData={setBookData} />
+      <p css={styles.updateDate}>データ更新日:2023/04/21</p>
     </div>
-  )
-}
+  );
+};
 
-export default BottomNav
+export default BottomNav;
